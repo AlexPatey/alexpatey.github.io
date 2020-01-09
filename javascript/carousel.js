@@ -12,24 +12,18 @@ const dotsNav3 = document.querySelector(".carousel__nav3");
 const dots3 = Array.from(dotsNav3.children);
 const slideWidth = slides[0].getBoundingClientRect().width;
 
-//console.log(slideWidth);
-
-//arrange slides horizontally 
-
-const setSlidePosition = (slide, index) => {
-    slide.style.left = slideWidth * index + "px";
-};
-
-slides.forEach(setSlidePosition);
-slides2.forEach(setSlidePosition)
-slides3.forEach(setSlidePosition)
+console.log("hello");
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
 
-    track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+    currentSlide.classList.add("hidden");
     currentSlide.classList.remove("current-slide");
-    targetSlide.classList.add("current-slide");
     
+    targetSlide.classList.add("current-slide");
+    targetSlide.classList.remove("hidden");
+
+    console.log(currentSlide.classList)
+    console.log(targetSlide.classList)
 };
 
 const updateDots = (currentDot, targetDot) => {
@@ -52,7 +46,6 @@ dotsNav.addEventListener("click", e => {
     if (!targetDot) return;
 
     const currentSlide = track.querySelector(".current-slide");
-    
     const currentDot = dotsNav.querySelector(".current-slide");
     const targetIndex = dots.findIndex(dot => dot === targetDot);
     const targetSlide = slides[targetIndex];
@@ -71,7 +64,7 @@ dotsNav2.addEventListener("click", e => {
     if (!targetDot) return;
 
     const currentSlide = track2.querySelector(".current-slide");
-    
+
     const currentDot = dotsNav2.querySelector(".current-slide");
     const targetIndex = dots2.findIndex(dot => dot === targetDot);
     const targetSlide = slides2[targetIndex];
