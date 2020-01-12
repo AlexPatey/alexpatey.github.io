@@ -26,7 +26,7 @@
 
 .wrapper > div {
 
-    border-bottom: black 1px solid;
+    /*border-bottom: black 1px solid;*/
     
     padding: 16px;
     margin-top: -14px;
@@ -72,6 +72,14 @@
 }
 
 .carousel__nav3 {
+   
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    
+}
+
+.carousel__nav4 {
    
     display: flex;
     justify-content: center;

@@ -4,12 +4,16 @@ const track2 = document.querySelector(".carousel__track2")
 const slides2 = Array.from(track2.children)
 const track3 = document.querySelector(".carousel__track3")
 const slides3 = Array.from(track3.children)
+const track4 = document.querySelector(".carousel__track4")
+const slides4 = Array.from(track4.children)
 const dotsNav = document.querySelector(".carousel__nav");
 const dots = Array.from(dotsNav.children);
 const dotsNav2 = document.querySelector(".carousel__nav2");
 const dots2 = Array.from(dotsNav2.children);
 const dotsNav3 = document.querySelector(".carousel__nav3");
 const dots3 = Array.from(dotsNav3.children);
+const dotsNav4 = document.querySelector(".carousel__nav4");
+const dots4 = Array.from(dotsNav4.children);
 const slideWidth = slides[0].getBoundingClientRect().width;
 
 console.log("hello");
@@ -89,6 +93,25 @@ dotsNav3.addEventListener("click", e => {
     const targetSlide = slides3[targetIndex];
 
     moveToSlide(track3, currentSlide, targetSlide);
+
+    updateDots(currentDot, targetDot);
+
+});
+
+dotsNav4.addEventListener("click", e => {
+
+    //which indicator was clicked?
+    const targetDot = e.target.closest("button");
+    
+    if (!targetDot) return;
+
+    const currentSlide = track4.querySelector(".current-slide");
+    
+    const currentDot = dotsNav4.querySelector(".current-slide");
+    const targetIndex = dots4.findIndex(dot => dot === targetDot);
+    const targetSlide = slides4[targetIndex];
+
+    moveToSlide(track4, currentSlide, targetSlide);
 
     updateDots(currentDot, targetDot);
 
