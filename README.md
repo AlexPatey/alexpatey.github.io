@@ -1,2 +1,2 @@
 # alexpatey.github.io
-Website
+Old website to display project portfolio. No longer in use.
